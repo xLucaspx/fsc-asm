@@ -15,13 +15,14 @@
 # |     4     |    3    |            1         |     3     |
 # |    d1     |   d2    |          resto       |     q     |
 #
-#	int main() {
+# int main() {
 # 	int dividendo = 10, divisor = 3, quociente = 0;
 # 	while (dividendo >= divisor) {
-#			dividendo -= divisor;
+# 		dividendo -= divisor;
 # 		quociente++;
 # 	}
 # 	int resto = dividendo;
+# }
 # -----------------------------------------------------------
 .data # Dados do programa
 d1:    .word 0xFAAA  # 64170  resposta: 489 (1E9)  resto 111  (6F)

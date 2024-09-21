@@ -60,7 +60,7 @@ epilogue:
 	lw ra 0(sp)      # epilogue
 	lw s0 4(sp)      # epilogue
 	addi sp sp 8     # epilogue: restaura ra da pilha e restaura a pilha
-	jal x0 ra
+	jr ra
 
 fim:
 	j fim

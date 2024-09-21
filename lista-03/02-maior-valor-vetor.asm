@@ -16,9 +16,9 @@
 # }
 # -----------------------------------------------------------
 .data # Dados do programa
-max:	.word	0
-n:		.word	5
-a:		.word	0x123 0x345 0x879 0x100 0x090
+max: .word 0
+n:   .word 5
+a:   .word 0x123 0x345 0x879 0x100 0x090
 # -----------------------------------------------------------
 .text # Codigo
 .globl main
@@ -29,7 +29,7 @@ main:
 	la s1 a               # s1 = &a
 
 	li s2 0               # s2 (max) = 0
-	li t0 0   		        # t0 (i) = 0
+	li t0 0               # t0 (i) = 0
 
 loop:
 	bge t0 s0 endl        # if (i >= size) break
