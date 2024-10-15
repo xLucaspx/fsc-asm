@@ -44,4 +44,6 @@ savePos:
 	sw s3 0(t0)         # mem[&pos] = i (salvando a posicao na memoria)
 
 fim:
-	j fim
+	li a7 93            # a7 = 93 (exit code)
+	xor a0 a0 a0        # a0 = 0 (exit status)
+	ecall               # exits

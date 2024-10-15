@@ -32,5 +32,7 @@ main:
 
 	sw s1 0(t0)    # mem[&a] = b
 	sw s0 0(t1)    # mem[&b] = a
-fim:
-	j fim # trava o processador
+
+	li a7 93       # a7 = 93 (exit code)
+	xor a0 a0 a0   # a0 = 0 (exit status)
+	ecall          # exits

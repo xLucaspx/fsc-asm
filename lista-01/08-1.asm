@@ -27,5 +27,6 @@ main:
 	sb s0 0(t1)   # mem[&first] = s0
 	sb s1 0(t2)   # mem[&last] = s1
 
-fim:
-	j fim
+	li a7 93      # a7 = 93 (exit code)
+	xor a0 a0 a0  # a0 = 0 (exit status)
+	ecall         # exits

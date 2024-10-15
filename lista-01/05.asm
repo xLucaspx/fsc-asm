@@ -33,5 +33,6 @@ endl:
 	la t0 sum        # t0 = &sum
 	sw s0 0(t0)      # mem[&sum] = sum
 
-fim:
-	j fim # trava o processador
+	li a7 93         # a7 = 93 (exit code)
+	xor a0 a0 a0     # a0 = 0 (exit status)
+	ecall            # exits

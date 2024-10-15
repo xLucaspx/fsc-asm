@@ -28,5 +28,7 @@ main:
 	la t1 z        # t1 = &z
 	sb t0 0(t1)    # mem[&z] = t0 (x + y)
                  # sb -> store byte, i.e. 8 bits
-fim:
-	j fim # trava o processador
+
+	li a7 93       # a7 = 93 (exit code)
+	xor a0 a0 a0   # a0 = 0 (exit status)
+	ecall          # exits

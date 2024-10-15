@@ -21,7 +21,7 @@ main:
 	lw t0 0(t0)             # t0 = buf
 
 	andi s0 t0 0x000000ff   # s0 = buf[0] (first pos)
-	# andi s1 t0 0xff000000   # s1 = buf[3] (last pos) ["0xff000000": operand is out of range]
+	# andi s1 t0 0xff000000   # s1 = buf[3] (last pos) ["0xff000000": operand is out of range, ver lista-02/01.asm]
 
 	srli t0 t0 24           # shift right buf 3 casas (8 bytes * 3 posições = 24)
                           # buf[3] -> buf[0]; e.g. 6f 6c 65 48 -> 00 00 00 6f
@@ -33,5 +33,6 @@ main:
 	la t0 last              # t0 = &last
 	sb s1 0(t0)             # mem[&last] = s1
 
-fim:
-	j fim
+	li a7 93                # a7 = 93 (exit code)
+	xor a0 a0 a0            # a0 = 0 (exit status)
+	ecall                   # exits

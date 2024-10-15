@@ -28,5 +28,9 @@ main:
 	la t3 c        # t3 = &c
 	sw s0 0(t3)    # mem[&c] = s0 (a + b)
 
-fim:
-	j fim # trava o processador
+	# fim:
+	# 	j fim # trava o processador
+
+	li a7 93       # a7 = 93 (exit code)
+	xor a0 a0 a0   # a0 = 0 (exit status)
+	ecall          # exits

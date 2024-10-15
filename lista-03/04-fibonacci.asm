@@ -13,7 +13,7 @@
 # }
 # -----------------------------------------------------------
 .data               # Dados do programa
-n: .word 20         # fibonacci(20) = 6765
+n: .word 20         # fibonacci(20) = 6765 (0x1a6d)
 # -----------------------------------------------------------
 .text               # Codigo
 .globl main
@@ -55,4 +55,6 @@ f_end:
 	jr ra             # retornando para a chamada da função
 
 fim:
-	j fim
+	li a7 93          # a7 = 93 (exit code)
+	xor a0 a0 a0      # a0 = 0 (exit status)
+	ecall             # exits

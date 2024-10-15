@@ -63,4 +63,6 @@ epilogue:
 	jr ra
 
 fim:
-	j fim
+	li a7 93         # a7 = 93 (exit code)
+	xor a0 a0 a0     # a0 = 0 (exit status)
+	ecall            # exits

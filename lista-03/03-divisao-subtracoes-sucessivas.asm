@@ -10,10 +10,10 @@
 # Exemplo de divisão de 10 por 3 usando subtrações sucessivas:
 # | Dividendo | Divisor |  Dividendo - Divisor | Quociente |
 # | --------- | ------- | -------------------- | --------- |
-# |    10     |    3    |            7         |     1     |
-# |     7     |    3    |            4         |     2     |
-# |     4     |    3    |            1         |     3     |
-# |    d1     |   d2    |          resto       |     q     |
+# |    10     |    3    |           7          |     1     |
+# |     7     |    3    |           4          |     2     |
+# |     4     |    3    |           1          |     3     |
+# |    d1     |   d2    |         resto        |     q     |
 #
 # int main() {
 # 	int dividendo = 10, divisor = 3, quociente = 0;
@@ -55,5 +55,6 @@ endl:
 	la t0 resto      # t0 = &resto
 	sw s0 0(t0)      # mem[&resto] = d1
 
-fim:
-	j fim
+	li a7 93         # a7 = 93 (exit code)
+	xor a0 a0 a0     # a0 = 0 (exit status)
+	ecall            # exits
